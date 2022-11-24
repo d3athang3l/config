@@ -47,6 +47,7 @@ sudo pacman -S rofi ranger alacritty bashtop emacs
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 ```
+> [Doom Emacs](https://github.com/doomemacs/doomemacs)
 
 ## Medien
 ```bash
