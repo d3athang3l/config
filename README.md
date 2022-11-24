@@ -21,10 +21,60 @@ bash ZSH_install.sh
 ```
 </br>
 
+# Programme
+
+## Grundlegende Programme
+```bash
+sudo pacman -S firefox thunderbird neofetch git code
+```
+
+## GTK Apps
+```bash
+sudo pacman -S file-roller thunar nautilus tilix
+```
+
+## Qt5 Apps
+```bash
+sudo pacman -S gwenview dolphin ark konsole kshutdown
+```
+
+## CLI Apps
+```bash
+sudo pacman -S rofi ranger alacritty bashtop emacs
+```
+
+```bash
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+```
+
+## Medien
+```bash
+sudo pacman -S gimp vlc
+paru -S davinci-resolve
+```
+
+# sonstige Anpassungen
+
 ## Fonts
 ```bash
 sudo cp Fonts/* /usr/share/fonts/TTF
 ``` 
+</br>
+
+## Wallpaper
+```bash
+sudo mkdir /usr/share/wallpaper
+sudo cp Wallpaper/* /usr/share/Wallpaper
+```
+</br>
+
+## Konfigurationsdateien kopieren
+```bash
+cp picom.conf ~/.config/
+cp nanorc /etc
+cp pacman.conf /etc
+```
 </br>
 
 ## Touchpad - Tippen um zu Klicken
