@@ -5,13 +5,13 @@
 ![GitHub](https://img.shields.io/github/license/Pfeffimann18/ArchSetup)
 </br>
 
-## paru AUR-Helper
+## yay AUR-Helper
 ```bash
-git clone https://aur.archlinux.org/paru
-cd paru
+git clone https://aur.archlinux.org/yay
+cd yay
 makepkg -si
 cd ..
-rm -r paru/
+rm -r yay/
 ``` 
 <br />
 
@@ -52,7 +52,7 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ## Medien
 ```bash
 sudo pacman -S gimp vlc
-paru -S davinci-resolve
+yay -S davinci-resolve
 ```
 
 # sonstige Anpassungen
