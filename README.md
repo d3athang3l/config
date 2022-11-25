@@ -25,7 +25,7 @@ bash ZSH_install.sh
 
 ## Grundlegende Programme
 ```bash
-sudo pacman -S firefox thunderbird neofetch git code
+sudo pacman -S firefox thunderbird neofetch git code conky conky-manager
 ```
 
 ## GTK Apps
@@ -48,10 +48,11 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 ```
 > [Doom Emacs](https://github.com/doomemacs/doomemacs)
+> [Purify](https://github.com/kyoz/purify)
 
 ## Medien
 ```bash
-sudo pacman -S gimp vlc
+sudo pacman -S gimp vlc rhythmbox
 yay -S davinci-resolve
 ```
 
@@ -72,9 +73,11 @@ sudo cp Wallpaper/* /usr/share/Wallpaper
 
 ## Konfigurationsdateien kopieren
 ```bash
+cp alacritty.yml ~/.config
 cp picom.conf ~/.config/
 cp nanorc /etc
 cp pacman.conf /etc
+cp display.py ~/.config/ranger/colorschemes
 ```
 </br>
 
