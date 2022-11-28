@@ -25,7 +25,7 @@ bash ZSH_install.sh
 
 ## Grundlegende Programme
 ```bash
-sudo pacman -S firefox thunderbird neofetch git code conky conky-manager
+sudo pacman -S firefox thunderbird neofetch git code python-spotdl conky conky-manager
 ```
 
 ## GTK Apps
