@@ -58,6 +58,12 @@ yay -S davinci-resolve
 
 # sonstige Anpassungen
 
+## `ls` mit Icons
+```
+yay -S logo-ls
+alias ls=logolls
+```
+
 ## Fonts
 ```bash
 sudo cp Fonts/* /usr/share/fonts/TTF
