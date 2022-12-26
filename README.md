@@ -59,9 +59,11 @@ yay -S davinci-resolve
 # sonstige Anpassungen
 
 ## `ls` mit Icons
-```
+```bash
 yay -S logo-ls
-alias ls=logolls
+alias ls=logo-ls
+which ls
+grep -r 'alias[ \t]\+ls' ~ /etc
 ```
 
 ## Fonts
