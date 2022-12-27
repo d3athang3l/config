@@ -40,7 +40,7 @@ sudo pacman -S gwenview dolphin ark konsole kshutdown
 
 ## CLI Apps
 ```bash
-sudo pacman -S rofi ranger alacritty bashtop emacs
+sudo pacman -S rofi ranger alacritty btop emacs
 ```
 
 ```bash
