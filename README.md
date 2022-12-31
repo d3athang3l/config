@@ -5,7 +5,7 @@
 ![GitHub](https://img.shields.io/github/license/Pfeffimann18/ArchSetup)
 </br>
 
-## yay AUR-Helper
+# yay AUR-Helper
 ```bash
 git clone https://aur.archlinux.org/yay
 cd yay
@@ -15,7 +15,21 @@ rm -r yay/
 ``` 
 <br />
 
-## [ZSH](https://github.com/Pfeffimann18/ZSH)
+# Themes
+```
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+cd WhiteSur-gtk-theme
+./install.sh -t red
+./install.sh
+```
+```
+git clone https://github.com/vinceliuice/McMojave-circle.git
+cd McMojave-circle
+./install.sh -red
+./install.sh
+```
+
+# [ZSH](https://github.com/Pfeffimann18/ZSH)
 ```bash
 neofetch --config ~/.config/neofetch/configZSH.conf
 
@@ -91,7 +105,8 @@ grep -r 'alias[ \t]\+ls' ~ /etc
 
 ## Fonts
 ```bash
-sudo cp Fonts/* /usr/share/fonts/TTF
+sudo mkdir /usr/share/fonts/custom
+sudo cp Fonts/* /usr/share/fonts/custom
 ``` 
 </br>
 
@@ -100,16 +115,15 @@ sudo cp Fonts/* /usr/share/fonts/TTF
 sudo mkdir /usr/share/wallpaper
 sudo cp Wallpaper/* /usr/share/Wallpaper
 ```
+Zusätzlich noch die Catppuccin-Wallpaper aus meiner anderen [Repo](https://github.com/Pfeffimann18/Catppuccin/#wallpapers)
 </br>
 
-## Konfigurationsdateien kopieren
+## Konfigurationsdateien kopieren und bearbeiten
 ```bash
 cp alacritty.yml ~/.config
 cp picom.conf ~/.config/
-cp nanorc /etc
-cp pacman.conf /etc
-cp display.py ~/.config/ranger/colorschemes
 ```
+Öffnen sie danach `/etc/nanorc` und aktivieren sie Syntax-Highlighting. Anschließend öffnen sie `/etc/pacman.conf` und fügen `ParallelDownloads = 5`, `Color` und `ILoveCandy` ein. 
 </br>
 
 ## Touchpad - Tippen um zu Klicken
@@ -142,6 +156,6 @@ Installiert den rEFInd-Bootmanager und das macOS-Thema.
 
 ```
 refind-install
-sudo cp -r refind /boot/efi/EFI
+sudo cp -r refind/Catppuccin /boot/efi/EFI
 ```
 </br>
