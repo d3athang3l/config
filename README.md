@@ -28,6 +28,9 @@ cd McMojave-circle
 ./install.sh -red
 ./install.sh
 ```
+```
+git clone https://github.com/ful1e5/apple_cursor
+```
 
 # [ZSH](https://github.com/Pfeffimann18/ZSH)
 ```bash
