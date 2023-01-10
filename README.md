@@ -3,7 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Pfeffimann18/ArchSetup)
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Pfeffimann18/ArchSetup)
 ![GitHub](https://img.shields.io/github/license/Pfeffimann18/ArchSetup)
-</br>
+</br> </br>
 
 # yay AUR-Helper
 ```bash
@@ -13,24 +13,31 @@ makepkg -si
 cd ..
 rm -r yay/
 ``` 
-<br />
+</br> </br>
 
 # Themes
-```
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
-cd WhiteSur-gtk-theme
+```bash
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme && cd cd WhiteSur-gtk-theme
+./install.sh
 ./install.sh -t red
+./install.sh -t green
+```
+```bash
+git clone https://github.com/vinceliuice/McMojave-circle && cd McMojave-circle
 ./install.sh
-```
-```
-git clone https://github.com/vinceliuice/McMojave-circle.git
-cd McMojave-circle
 ./install.sh -red
+./install.sh - green
+```
+```bash
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme && cd WhiteSur-icon-theme
 ./install.sh
+./install.sh -t red
+./install.sh -t green
 ```
+```bash
+yay -S apple_cursor
 ```
-git clone https://github.com/ful1e5/apple_cursor
-```
+</br> </br> 
 
 # [ZSH](https://github.com/Pfeffimann18/ZSH)
 ```bash
@@ -112,13 +119,14 @@ alias ls=logo-ls
 which ls
 grep -r 'alias[ \t]\+ls' ~ /etc
 ```
+</br> </br>
 
 ## Fonts
 ```bash
 sudo mkdir /usr/share/fonts/custom
 sudo cp Fonts/* /usr/share/fonts/custom
 ``` 
-</br>
+</br> </br>
 
 ## Wallpaper
 ```bash
@@ -126,22 +134,22 @@ sudo mkdir /usr/share/wallpaper
 sudo cp Wallpaper/* /usr/share/Wallpaper
 ```
 Zusätzlich noch die Catppuccin-Wallpaper aus meiner anderen [Repo](https://github.com/Pfeffimann18/Catppuccin/#wallpapers)
-</br>
+</br> </br>
 
 ## Konfigurationsdateien kopieren und bearbeiten
 ```bash
 cp alacritty.yml ~/.config
 cp picom.conf ~/.config/
 ```
-Öffnen sie danach `/etc/nvimrc` und aktivieren sie Syntax-Highlighting. Anschließend öffnen sie `/etc/pacman.conf` und fügen `ParallelDownloads = 5`, `Color` und `ILoveCandy` ein. 
-</br>
+Anschließend öffnen sie `/etc/pacman.conf` und fügen `ParallelDownloads = 5`, `Color` und `ILoveCandy` ein. 
+</br> </br>
 
 ## Touchpad - Tippen um zu Klicken
 ```
 sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
 ```
 - zum Aktivieren des Linksklick durch tippn auf dem Touchpad 
-<br />
+</br> </br>
 
 ## [LY](https://github.com/fairyglade/ly) - Displaymanager
 LY ist ein schlichter Displaymanager im Konsolen-Design.
@@ -155,7 +163,7 @@ yay -S ly
 sudo systemctl disable lightdm.service
 sudo systemctl enable ly.service
 ```
-</br>
+</br> </br>
 
 ## rEFInd - Bootmanager
 Installiert den rEFInd-Bootmanager und das macOS-Thema.
@@ -168,4 +176,3 @@ Installiert den rEFInd-Bootmanager und das macOS-Thema.
 refind-install
 sudo cp -r refind/Catppuccin /boot/efi/EFI
 ```
-</br>
