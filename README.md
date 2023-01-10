@@ -48,11 +48,10 @@ alias ls='logo-ls'
 alias uhr='tty-clock -s -c -B -C1'
 alias v="nvim"
 
-alias zconfig='nano ~/.zshrc'
+alias zconfig='nvim ~/.zshrc'
 alias zsource='source ~/.zshrc'
-alias pconfig='nano ~/.config/polybar/config.ini'
-alias bspwmconf='nano ~/.config/bspwm/bspwmrc'
-alias sxhkdconf='nano ~/.config/sxhkd/sxhkdrc'
+alias bspwmconf='nvim ~/.config/bspwm/bspwmrc'
+alias sxhkdconf='nvim ~/.config/sxhkd/sxhkdrc'
 alias sxrestart='pkill -USR1 -x sxhkd'
 alias connect95='nmcli device wifi connect NETGEAR95 password ********'
 alias connect57='nmcli device wifi connect NETGEAR57 password ********'
@@ -134,7 +133,7 @@ Zusätzlich noch die Catppuccin-Wallpaper aus meiner anderen [Repo](https://gith
 cp alacritty.yml ~/.config
 cp picom.conf ~/.config/
 ```
-Öffnen sie danach `/etc/nanorc` und aktivieren sie Syntax-Highlighting. Anschließend öffnen sie `/etc/pacman.conf` und fügen `ParallelDownloads = 5`, `Color` und `ILoveCandy` ein. 
+Öffnen sie danach `/etc/nvimrc` und aktivieren sie Syntax-Highlighting. Anschließend öffnen sie `/etc/pacman.conf` und fügen `ParallelDownloads = 5`, `Color` und `ILoveCandy` ein. 
 </br>
 
 ## Touchpad - Tippen um zu Klicken
