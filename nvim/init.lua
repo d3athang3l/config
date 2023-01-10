@@ -1,10 +1,22 @@
-require("leon.plugins-setup")
-require("leon.core.options")
-require("leon.core.keymaps")
-require("leon.core.colorscheme")
-require("leon.plugins.comment")
-require("leon.plugins.nvim-cmp")
-require("leon.plugins.nvim-tree")
-require("leon.plugins.lualine")
-require("leon.plugins.telescope")
+require "user.options"
+require "user.keymaps"
+require "user.plugins"
+require "user.colorscheme"
+require "user.cmp"
+require "user.lsp"
+require "user.telescope"
+require "user.gitsigns"
+require "user.treesitter"
+require "user.autopairs"
+require "user.comment"
+require "user.nvim-tree"
+require "user.bufferline"
+require "user.lualine"
+require "user.project"
+require "user.impatient"
+require "user.indentline"
+require "user.alpha"
+require "user.whichkey"
+require "user.autocommands"
 require 'colorizer'.setup()
+require "user.nvim-cursorline"

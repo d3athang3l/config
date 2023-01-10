@@ -40,24 +40,32 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+cd ~
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=~/.local/bin:$PATH
+export "MICRO_TRUECOLOR=1"
 alias ls='logo-ls'
 alias uhr='tty-clock -s -c -B -C1'
+alias v="nvim"
+
 alias zconfig='nano ~/.zshrc'
 alias zsource='source ~/.zshrc'
+alias pconfig='nano ~/.config/polybar/config.ini'
+alias bspwmconf='nano ~/.config/bspwm/bspwmrc'
+alias sxhkdconf='nano ~/.config/sxhkd/sxhkdrc'
 alias sxrestart='pkill -USR1 -x sxhkd'
+alias connect95='nmcli device wifi connect NETGEAR95 password ********'
+alias connect57='nmcli device wifi connect NETGEAR57 password ********'
+alias firefox-pv='firefox --private-window'
 
-ZSH_THEME="gnzh"
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(zsh-autosuggestions zsh-syntax-highlighting git archlinux sudo)
 source $ZSH/oh-my-zsh.sh
+ZSH_HIGHLIGHT_HIDDEN='true'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH=$PATH:/home/leon/.spicetify
-
 ```
 </br>
 
@@ -80,7 +88,7 @@ sudo pacman -S gwenview dolphin ark konsole kshutdown
 
 ## CLI Apps
 ```bash
-sudo pacman -S rofi ranger alacritty btop emacs
+sudo pacman -S neovim alacritty btop rofi emacs ranger
 ```
 
 ```bash
@@ -92,7 +100,7 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 
 ## Medien
 ```bash
-sudo pacman -S gimp vlc rhythmbox
+sudo pacman -S gimp vlc rhythmbox audacity
 yay -S davinci-resolve
 ```
 

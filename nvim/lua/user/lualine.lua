@@ -1,4 +1,3 @@
-
 -- import lualine plugin safely
 local status, lualine = pcall(require, "lualine")
 if not status then
@@ -6,7 +5,7 @@ if not status then
 end
 
 -- get lualine nightfly theme
-local lualine_nightfly = require("lualine.themes.catppuccin")
+local catppuccin = require("lualine.themes.catppuccin")
 
 -- new colors for theme
 local new_colors = {
@@ -17,11 +16,11 @@ local new_colors = {
   black = "#000000",
 }
 
--- change nightlfy theme colors
-lualine_nightfly.normal.a.bg = new_colors.blue
-lualine_nightfly.insert.a.bg = new_colors.green
-lualine_nightfly.visual.a.bg = new_colors.violet
-lualine_nightfly.command = {
+-- change catppuccin theme colors
+catppuccin.normal.a.bg = new_colors.blue
+catppuccin.insert.a.bg = new_colors.green
+catppuccin.visual.a.bg = new_colors.violet
+catppuccin.command = {
   a = {
     gui = "bold",
     bg = new_colors.yellow,
@@ -32,6 +31,6 @@ lualine_nightfly.command = {
 -- configure lualine with modified theme
 lualine.setup({
   options = {
-    theme = lualine_nightfly,
+    theme = catppuccin,
   },
 })
