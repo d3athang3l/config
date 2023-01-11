@@ -96,7 +96,7 @@ cp -r nvim ~/.config/nvim
 
 ## Grundlegende Programme
 ```bash
-sudo pacman -S firefox thunderbird neofetch git code python-spotdl conky conky-manager
+sudo pacman -S firefox nvim thunderbird neofetch git code python-spotdl conky
 ```
 
 ## GTK Apps
@@ -115,6 +115,7 @@ sudo pacman -S neovim alacritty btop rofi emacs ranger
 ```
 
 ```bash
+yay -S emacs
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 ```
