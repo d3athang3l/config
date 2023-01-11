@@ -8,11 +8,9 @@
 
 # yay AUR-Helper
 ```bash
-git clone https://aur.archlinux.org/yay
-cd yay
+git clone https://aur.archlinux.org/yay && cd yay
 makepkg -si
-cd ..
-rm -r yay/
+cd .. && rm -r yay/
 ``` 
 </br>
 </br>
@@ -39,11 +37,25 @@ git clone https://github.com/vinceliuice/WhiteSur-icon-theme && cd WhiteSur-icon
 ```bash
 yay -S apple_cursor
 ```
+```bash
+git clone https://github.com/vinceliuice/WhiteSur-firefox-theme.git && cd WhiteSur-firefox-theme
+./install.sh -a
+cp Macchiato.css ~/.mozilla/firefox/firefox-themes/Monterey/colors/dark.css
+cp Frappe.css ~/.mozilla/firefox/firefox-themes/Monterey/colors/dark.css
+```
+```bash
+sudo mkdir /usr/share/fonts/custom
+sudo cp Fonts/* /usr/share/fonts/custom
+``` 
+```bash
+sudo mkdir /usr/share/wallpaper
+sudo cp Wallpaper/* /usr/share/Wallpaper
+```
+> Additionally the Catppuccin wallpapers from my other [Repo](https://github.com/Pfeffimann18/Catppuccin/#wallpapers)
 </br> </br> 
 
-# [ZSH](https://github.com/Pfeffimann18/ZSH)
+# [ZSH](https://github.com/Pfeffimann18/ZSH)-Alias
 ```bash
-neofetch --config ~/.config/neofetch/configZSH.conf
 alias ls='logo-ls'
 alias uhr='tty-clock -s -c -B -C1'
 alias v="nvim"
@@ -69,6 +81,18 @@ alias firefox-pv='firefox --private-window'
 
 
 # Programme
+</br>
+
+## Neovim - IDE
+<p align="center">
+  <img src="https://thumbs2.imgbox.com/31/40/NoVRnlOX_t.png" width="900px">
+</p>
+
+```bash
+yay -S neovim
+rm -r ~/.config/nvim
+cp -r nvim ~/.config/nvim
+```
 
 ## Grundlegende Programme
 ```bash
@@ -114,38 +138,23 @@ grep -r 'alias[ \t]\+ls' ~ /etc
 ```
 </br> </br>
 
-## Fonts
-```bash
-sudo mkdir /usr/share/fonts/custom
-sudo cp Fonts/* /usr/share/fonts/custom
-``` 
-</br> </br>
-
-## Wallpaper
-```bash
-sudo mkdir /usr/share/wallpaper
-sudo cp Wallpaper/* /usr/share/Wallpaper
-```
-Zusätzlich noch die Catppuccin-Wallpaper aus meiner anderen [Repo](https://github.com/Pfeffimann18/Catppuccin/#wallpapers)
-</br> </br>
-
 ## Konfigurationsdateien kopieren und bearbeiten
 ```bash
 cp alacritty.yml ~/.config
 cp picom.conf ~/.config/
 ```
-Anschließend öffnen sie `/etc/pacman.conf` und fügen `ParallelDownloads = 5`, `Color` und `ILoveCandy` ein. 
+Open `/etc/pacman.conf` and add `ParallelDownloads = 5`, `Color` and `ILoveCandy`. 
 </br> </br>
 
 ## Touchpad - Tippen um zu Klicken
 ```
 sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
 ```
-- zum Aktivieren des Linksklick durch tippn auf dem Touchpad 
+- to activate the left click by tapping on the touchpad 
 </br> </br>
 
 ## [LY](https://github.com/fairyglade/ly) - Displaymanager
-LY ist ein schlichter Displaymanager im Konsolen-Design.
+LY is a lightweight display manager in a console design.
 
 <p align="center">
   <img src="https://thumbs2.imgbox.com/33/8e/ahK81Qtk_t.png" width="900px">
@@ -159,7 +168,7 @@ sudo systemctl enable ly.service
 </br> </br>
 
 ## rEFInd - Bootmanager
-Installiert den rEFInd-Bootmanager und das macOS-Thema.
+Installs the rEFInd boot manager and the macOS theme.
 
 <p align="center">
   <img src="https://thumbs2.imgbox.com/4b/f5/V9FDFr5B_t.png" width="900px">
