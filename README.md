@@ -1,9 +1,10 @@
-# ArchBasicSetup
+# config
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Pfeffimann18/ArchSetup)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Pfeffimann18/ArchSetup)
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Pfeffimann18/ArchSetup)
 ![GitHub](https://img.shields.io/github/license/Pfeffimann18/ArchSetup)
-</br> </br>
+</br>
+</br>
 
 # yay AUR-Helper
 ```bash
@@ -13,9 +14,10 @@ makepkg -si
 cd ..
 rm -r yay/
 ``` 
-</br> </br>
+</br>
+</br>
 
-# Themes
+# Themes, Icons and Cursor
 ```bash
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme && cd cd WhiteSur-gtk-theme
 ./install.sh
@@ -42,15 +44,6 @@ yay -S apple_cursor
 # [ZSH](https://github.com/Pfeffimann18/ZSH)
 ```bash
 neofetch --config ~/.config/neofetch/configZSH.conf
-
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-cd ~
-export ZSH="$HOME/.oh-my-zsh"
-export PATH=~/.local/bin:$PATH
-export "MICRO_TRUECOLOR=1"
 alias ls='logo-ls'
 alias uhr='tty-clock -s -c -B -C1'
 alias v="nvim"
@@ -60,20 +53,20 @@ alias zsource='source ~/.zshrc'
 alias bspwmconf='nvim ~/.config/bspwm/bspwmrc'
 alias sxhkdconf='nvim ~/.config/sxhkd/sxhkdrc'
 alias sxrestart='pkill -USR1 -x sxhkd'
-alias connect95='nmcli device wifi connect NETGEAR95 password ********'
-alias connect57='nmcli device wifi connect NETGEAR57 password ********'
 alias firefox-pv='firefox --private-window'
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting git archlinux sudo)
-source $ZSH/oh-my-zsh.sh
-ZSH_HIGHLIGHT_HIDDEN='true'
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH=$PATH:/home/leon/.spicetify
 ```
 </br>
+
+## Neofetch
+|Neofetch (default)                                          |Neofetch (Terminal)                                          |
+|------------------------------------------------------------|-------------------------------------------------------------|
+|![Neofetch](https://thumbs2.imgbox.com/b7/42/nDFEiBOL_t.png)|![Neofetch](https://thumbs2.imgbox.com/28/9e/74rwM13a_t.png)"|
+
+# [bspwm](https://github.com/Pfeffimann18/bspwm)
+<p align="center">
+  <img src="https://thumbs2.imgbox.com/e6/62/ICmJNbVO_t.png" width="900px">
+</p>
+
 
 # Programme
 
