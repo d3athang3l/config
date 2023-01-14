@@ -51,8 +51,9 @@ sudo cp Wallpaper/* /usr/share/Wallpaper
 ## Firefox
 ```bash
 mkdir ~/.mozilla/firefox/*.default-release/chrome
-cp firefox
+cp firefox/userChrome.css ~/.mozilla/firefox/*.default-release/chrome
 ```
+> 
 ```bash
 git clone https://github.com/vinceliuice/WhiteSur-firefox-theme.git && cd WhiteSur-firefox-theme
 ./install.sh -a
