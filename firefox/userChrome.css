@@ -1,0 +1,108 @@
+@-moz-document url("chrome://browser/content/browser.xhtml") {
+
+  /* To bring back OS title bar with min/max/close buttons, some users might
+   * consider setting browser.tabs.drawInTitlebar to false in about:config
+   */
+  :root {
+    --custom-sidebar-collapsed-width: 35px;
+    --custom-sidebar-full-width: 20vw;
+    --custom-sidebar-border: 0px solid #404040;
+  }
+
+  #TabsToolbar {
+    visibility: collapse !important;
+  }
+
+  #navigator-toolbox {
+    border-bottom: 0 !important;
+  }
+
+  #browser {
+    position: relative;
+  }
+
+  #sidebar-box:not([hidden]) {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-right: var(--custom-sidebar-border);
+    min-width: var(--custom-sidebar-collapsed-width) !important;
+    width: var(--custom-sidebar-collapsed-width) !important;
+    height: 100%;
+    transition: all 0.2s ease;
+  }
+
+  #sidebar-box:hover,
+  #sidebar-header,
+  #sidebar {
+    width: var(--custom-sidebar-full-width) !important;
+  }
+
+  #sidebar {
+    flex-grow: 1;
+  }
+
+  #sidebar-splitter {
+    display: none;
+  }
+
+  #sidebar-box:not([hidden]) ~ #appcontent {
+    margin-left: var(--custom-sidebar-collapsed-width);
+  }
+
+  #sidebar-box:not([hidden]) ~ #appcontent .findbar-container {
+    min-width: calc(100vw - 48px - var(--custom-sidebar-collapsed-width)) !important;
+  }
+
+  /* Sidebar on the right */
+  #sidebar-box[positionend="true"]:not([hidden]) {
+    right: 0;
+  }
+
+  #sidebar-box[positionend="true"]:not([hidden]) ~ #appcontent {
+    margin-left: 0;
+    margin-right: var(--custom-sidebar-collapsed-width);
+    border-right: 0;
+    border-left: var(--custom-sidebar-border);
+  }
+
+  /* Full screen */
+  #main-window[inFullscreen][inDOMFullscreen] #appcontent {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Place sidebar header at the bottom */
+  /*
+  #sidebar-box:not([hidden]) {
+    flex-direction: column-reverse;
+  }
+  */
+  
+  /* Collapsible sidebar header
+   * works best when positioned at the bottom
+   */
+  /*
+  #sidebar-header {
+    border: 0 !important;
+    padding: 0 !important;
+    height: 1px;
+    opacity: 0;
+  }
+  
+  #sidebar-header:hover {
+    padding: 8px !important;
+    height: auto;
+    opacity: 1;
+  }
+  */
+  
+  /* Hide sidebar header */
+  /*
+  #sidebar-header {
+    display: none;
+  }
+  */
+}
