@@ -38,12 +38,6 @@ git clone https://github.com/vinceliuice/WhiteSur-icon-theme && cd WhiteSur-icon
 yay -S apple_cursor
 ```
 ```bash
-git clone https://github.com/vinceliuice/WhiteSur-firefox-theme.git && cd WhiteSur-firefox-theme
-./install.sh -a
-cp Macchiato.css ~/.mozilla/firefox/firefox-themes/Monterey/colors/dark.css
-cp Frappe.css ~/.mozilla/firefox/firefox-themes/Monterey/colors/dark.css
-```
-```bash
 sudo mkdir /usr/share/fonts/custom
 sudo cp Fonts/* /usr/share/fonts/custom
 ``` 
@@ -52,6 +46,20 @@ sudo mkdir /usr/share/wallpaper
 sudo cp Wallpaper/* /usr/share/Wallpaper
 ```
 > Additionally the Catppuccin wallpapers from my other [Repo](https://github.com/Pfeffimann18/Catppuccin/#wallpapers)
+</br>
+
+## Firefox
+```bash
+mkdir ~/.mozilla/firefox/*.default-release/chrome
+cp firefox
+```
+```bash
+git clone https://github.com/vinceliuice/WhiteSur-firefox-theme.git && cd WhiteSur-firefox-theme
+./install.sh -a
+cp Macchiato.css ~/.mozilla/firefox/firefox-themes/Monterey/colors/dark.css
+cp Frappe.css ~/.mozilla/firefox/firefox-themes/Monterey/colors/dark.css
+```
+
 </br> </br> 
 
 # [ZSH](https://github.com/Pfeffimann18/ZSH)-Alias
