@@ -148,6 +148,8 @@ grep -r 'alias[ \t]\+ls' ~ /etc
 ```
 </br> </br>
 
+## Picom with rounded Corners and Animations
+
 ## Konfigurationsdateien kopieren und bearbeiten
 ```bash
 cp alacritty.yml ~/.config
