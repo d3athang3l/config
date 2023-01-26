@@ -4,14 +4,10 @@ super + Return
 
 # Finder
 super + e
-	nemo
-
-# Text Editor
-super + g
-	geany
+ dolphin	
 
 # Neovim
-super + d
+super + g
  alacritty -e nvim
 
 # Browser

@@ -139,24 +139,35 @@ yay -S davinci-resolve
 
 # sonstige Anpassungen
 
-## `ls` mit Icons
+## `ls` with Icons
 ```bash
 yay -S logo-ls
 alias ls=logo-ls
 which ls
 grep -r 'alias[ \t]\+ls' ~ /etc
 ```
-</br> </br>
+> You can also use `exa --icons`.
+
+</br>
 
 ## Picom with rounded Corners and Animations
+```bash
+yay -S picom-animations-git
+picom -b --experimental-backends --backend glx --blur-method none --animations --animation-for-open-window zoom --vsync &
+```
+</br>
 
-## Konfigurationsdateien kopieren und bearbeiten
+## Qt5-Config
+Install `qt5ct` and add `QT_QPA_PLATFORMTHEME=qt5ct` to `/etc/environment`. If needed comment `QT_STYLE_OVERRIDE=kvantum`.
+</br>
+
+## Pacman
 ```bash
 cp alacritty.yml ~/.config
 cp picom.conf ~/.config/
 ```
 Open `/etc/pacman.conf` and add `ParallelDownloads = 5`, `Color` and `ILoveCandy`. 
-</br> </br>
+</br>
 
 ## Touchpad - Tippen um zu Klicken
 ```
