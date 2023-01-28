@@ -115,7 +115,7 @@ sudo pacman -S file-roller thunar nautilus tilix
 
 ## Qt5 Apps
 ```bash
-sudo pacman -S gwenview dolphin ark konsole kshutdown
+sudo pacman -S gwenview dolphin ark konsole kshutdown spactacle
 ```
 
 ## CLI Apps
