@@ -27,4 +27,4 @@ alias sxhkdconf='nano ~/.config/sxhkd/sxhkdrc'
 alias sxrestart='pkill -USR1 -x sxhkd'
 alias connect95='nmcli device wifi connect NETGEAR95 password fuzzyonion317'
 alias connect57='nmcli device wifi connect NETGEAR57 password grandstreet123'
-alias firefox-pv='firefox --private-window'
+alias firefox-pv='firefox --private-window'MOUSE_WHEEL_UP_DOWN=1

@@ -42,7 +42,7 @@ sh ~/.screenlayout/monitor.sh &
 
 # Bar
 killall polybar &
-zsh ~/.config/polybar/launch_2mon_2bar.sh &
+zsh ~/.config/polybar/launch.sh &
 
 # Notifications
 /usr/bin/dunst &
