@@ -92,6 +92,7 @@ return packer.startup(function(use)
 
 	use'NvChad/nvim-colorizer.lua'
 	use'yamatsum/nvim-cursorline'
+	use'akinsho/nvim-toggleterm.lua'
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

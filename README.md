@@ -67,7 +67,7 @@ cp Frappe.css ~/.mozilla/firefox/firefox-themes/Monterey/colors/dark.css
 ```bash
 alias ls='logo-ls'
 alias uhr='tty-clock -s -c -B -C1'
-alias v="nvim"
+alias v='alacritty --config-file=.config/alacritty/alacritty-nvim.yml -e nvim'
 
 alias zconfig='nvim ~/.zshrc'
 alias zsource='source ~/.zshrc'
