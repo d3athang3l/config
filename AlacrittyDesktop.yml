@@ -6,7 +6,7 @@ window:
     startup_mode: Windowed
   
   opacity: 0.85
-
+  blur: true
 selection:
   save_to_clipboard: true
 
