@@ -6,6 +6,8 @@ fi
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+export SUDO_EDITOR="nvim"
 export PATH=$PATH:/home/leon/.spicetify
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=~/.local/bin:$PATH
@@ -18,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls='logo-ls'
 alias uhr='tty-clock -s -c -B -C1'
-alias v="nvim"
+alias v='nvim'
 alias zconfig='nano ~/.zshrc'
 alias zsource='source ~/.zshrc'
 alias pconfig='nano ~/.config/polybar/config.ini'
@@ -27,4 +29,6 @@ alias sxhkdconf='nano ~/.config/sxhkd/sxhkdrc'
 alias sxrestart='pkill -USR1 -x sxhkd'
 alias connect95='nmcli device wifi connect NETGEAR95 password fuzzyonion317'
 alias connect57='nmcli device wifi connect NETGEAR57 password grandstreet123'
-alias firefox-pv='firefox --private-window'MOUSE_WHEEL_UP_DOWN=1
+alias firefox-pv='firefox --private-window'
+alias sudoedit='sudo -e'
+
