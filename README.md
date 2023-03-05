@@ -8,7 +8,7 @@
 
 # Setup GitHub-Projects
 ```
-sh -c "$(wget -O- https://github.com/Pfeffimann18/config/blob/main/gc.sh)"
+sh -c "$(wget -O- https://raw.githubusercontent.com/Pfeffimann18/config/main/gc.sh)"
 ```
 </br>
 </br>
