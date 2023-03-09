@@ -32,4 +32,3 @@ alias connect57='nmcli device wifi connect NETGEAR57 password grandstreet123'
 alias firefox-pv='firefox --private-window'
 alias sudoedit='sudo -e'
 alias ex='exa --icons'
-
