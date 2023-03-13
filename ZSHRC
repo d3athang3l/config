@@ -1,4 +1,4 @@
-neofetch --config ~/.config/neofetch/configZSH.conf
+pfetch
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -32,4 +32,3 @@ alias connect57='nmcli device wifi connect NETGEAR57 password grandstreet123'
 alias firefox-pv='firefox --private-window'
 alias sudoedit='sudo -e'
 alias ex='exa --icons'
-

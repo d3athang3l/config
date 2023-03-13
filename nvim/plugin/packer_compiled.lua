@@ -182,12 +182,17 @@ _G.packer_plugins = {
   ["nvim-cursorline"] = {
     loaded = true,
     path = "/home/leon/.local/share/nvim/site/pack/packer/start/nvim-cursorline",
-    url = "https://github.com/nvim-cursorline"
+    url = "https://github.com/yamatsum/nvim-cursorline"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/leon/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-toggleterm.lua"] = {
+    loaded = true,
+    path = "/home/leon/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua",
+    url = "https://github.com/akinsho/nvim-toggleterm.lua"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
