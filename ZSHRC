@@ -18,7 +18,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(zsh-autosuggestions zsh-syntax-highlighting git archlinux sudo)
 source $ZSH/oh-my-zsh.sh
 
-alias ls='logo-ls'
+alias ls='exa --icons'
 alias uhr='tty-clock -s -c -B -C1'
 alias v='nvim'
 alias zconfig='nano ~/.zshrc'
