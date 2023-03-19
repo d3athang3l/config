@@ -3,6 +3,7 @@ ln -s ~/GitHub/config/nvim ~/.config
 ln -s ~/GitHub/config/neofetch ~/.config
 ln -s ~/GitHub/config/fonts ~/.local/share
 ln -s ~/GitHub/config/.zshrc ~/.zshrc
+ln -s ~/GitHub/config/kitty ~/.config/kitty/kitty.conf
 
 
 ln -s ~/GitHub/config/polybar/ ~/.config

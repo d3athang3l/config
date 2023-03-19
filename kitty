@@ -1,18 +1,19 @@
 #: Font
-font_family      VictorMono Nerd Font
+font_family      JetBrainsMono Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
 
-font_size 10.5
+font_size 10
 
 cursor_shape beam
-cursor_beam_thickness 1.5
+cursor_beam_thickness 1.0
 cursor_underline_thickness 2.0
-cursor_blink_interval -1
+cursor_blink_interval 0.5
 cursor_stop_blinking_after 15.0
 
-window_padding_width 5
+window_padding_width 10
+window_border_width 2pt
 
 #: Performance tuning {{{
 
@@ -25,29 +26,28 @@ sync_to_monitor yes
 tab_bar_min_tabs            2
 tab_bar_edge                bottom
 tab_bar_style               powerline
-tab_powerline_style         angled
+tab_powerline_style         slanted
 tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}"
 
-: Color scheme {{{
-
+#: Color scheme {{{
 
 #: The foreground and background colors.
 # The basic colors
 foreground              #C6D0F5
 background              #303446
 selection_foreground    #303446
-selection_background    #81C8BE
+selection_background    #7dc4e4
 
 # Cursor colors
-cursor                  #81c8be
+cursor                  #7dc4e4
 cursor_text_color       #303446
 
 # URL underline color when hovering with mouse
 url_color               #F2D5CF
 
 # Kitty window border colors
-active_border_color     #BABBF1
-inactive_border_color   #737994
+active_border_color     #7dc4e4
+inactive_border_color   #303446
 bell_border_color       #E5C890
 
 # OS Window titlebar colors
@@ -56,10 +56,10 @@ macos_titlebar_color system
 
 # Tab bar colors
 active_tab_foreground   #232634
-active_tab_background   #81c8be
+active_tab_background   #7dc4e4
 inactive_tab_foreground #C6D0F5
-inactive_tab_background #414559
-tab_bar_background      #232634
+inactive_tab_background #303446
+tab_bar_background      #303446
 
 # Colors for marks (marked text in the terminal)
 mark1_foreground #303446
@@ -108,10 +108,8 @@ background_opacity 1
 #: Keybindings
 
 kitty_mod ctrl+shift
-clear_all_shortcuts no
 map kitty_mod+c copy_to_clipboard
 map cmd+c       copy_to_clipboard
-map kitty_mod+v paste_from_clipboard
 map cmd+v       paste_from_clipboard
 map page_up scroll_page_up
 map page_down scroll_page_down
@@ -130,6 +128,7 @@ map kitty_mod+plus   change_font_size all +2.0
 map kitty_mod+minus       change_font_size all -2.0
 map kitty_mod+backspace change_font_size all 0
 map kitty_mod+f5 load_config_file
+mouse_map middle release ungrabbed paste_from_clipboard
 
 #: Misc
 hide_window_decorations no
