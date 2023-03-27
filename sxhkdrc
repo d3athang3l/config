@@ -12,11 +12,11 @@ super + g
 
 # Browser
 super + f
-	firefox
+	firefox-developer-edition
 
 # dmenu
 super + shift + Return
-  dmenu_path | dmenu_run -l 20 -g 4 -X 0 -Y 0 -W 780 -p 'Run: ' "$@"
+  dmenu_path | dmenu_run -l 20 -g 4 -X 0 -Y 0 -W 780 -p 'Run: '
 
 # dmenu-hub
 super + ctrl + Return

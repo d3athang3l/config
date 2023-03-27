@@ -2,7 +2,8 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d sys term www dev txt vid flt spot virt gfx
+bspc monitor HDMI-0 -d sys term www dev txt vid flt spot virt gfx
+bspc monitor DVI-0 -d sys term www dev txt
 
 bspc config border_width         2
 bspc config window_gap           8
@@ -64,10 +65,10 @@ dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 
 # Picom
 killall picom
-picom -b --experimental-backends --backend glx --blur-method none --animations --animation-for-open-window zoom --vsync &
+picom --config ~/GitHub/config/picom.conf -b --experimental-backends --backend glx --blur-method none --animations --animation-for-open-window zoom --vsync &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
 
 # Low battery notifier
-~/.config/bspwm/scripts/low_bat_notifier.sh
+# ~/.config/bspwm/scripts/low_bat_notifier.sh
