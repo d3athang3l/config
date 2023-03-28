@@ -134,3 +134,4 @@ mouse_map middle release ungrabbed paste_from_clipboard
 hide_window_decorations no
 scrollback_lines 2000
 copy_on_select yes
+linux_display_server x11
