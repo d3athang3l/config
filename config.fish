@@ -36,4 +36,4 @@ abbr -a  setlocales 'sudo localectl set-x11-keymap de-latin1-nodeadkeys && sudo 
 
 #bindkey -s "^[OM" "^M" 
 
-starship init fish | source
+# starship init fish | source
