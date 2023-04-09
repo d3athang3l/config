@@ -28,8 +28,9 @@ font:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
 
-  size: 9.5
-  offset:
+size: 10
+
+offset:
     x: 0
     y: 1
 
@@ -42,7 +43,7 @@ colors:
 
     cursor:
         text: "#24273A" # base
-        cursor: "#8AADF4" # teal
+        cursor: "#8BD5CA" # teal
 
     search:
         matches:
@@ -65,7 +66,7 @@ colors:
 
     selection:
         text: "#24273A" # base
-        background: "#8AADF4" # teal
+        background: "#8BD5CA" # teal
 
     normal:
         black: "#494D64" # surface1

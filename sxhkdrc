@@ -4,11 +4,11 @@ super + Return
 
 # Finder
 super + e
- dolphin	
+	dolphin	
 
-# Neovim
+# Texteditor
 super + g
- alacritty -e nvim
+	geany
 
 # Browser
 super + f
@@ -16,7 +16,8 @@ super + f
 
 # dmenu
 super + shift + Return
-  dmenu_path | dmenu_run -l 20 -g 4 -X 0 -Y 0 -W 780 -p 'Run: '
+  	dmenu_path | dmenu_run -l 20 -X 0 -Y 0 -W 780 -p 'Run: '
+  	#dmenu_path | dmenu_run -l 20 -g 4 -X 0 -Y 0 -W 780 -p 'Run: '
 
 # dmenu-hub
 super + ctrl + Return
@@ -24,7 +25,7 @@ super + ctrl + Return
 	
 # power-menu 
 super + shift + e
-     ~/.config/scripts/dmenu/dm-sysstate.sh
+     	~/.config/scripts/dmenu/dm-sysstate.sh
 	
 # show open window
 super + shift + Tab
@@ -62,22 +63,22 @@ super + ctrl + {w,a,s,d}
 
 # Multimedia keys
 XF86AudioRaiseVolume
-  amixer -D pulse sset Master 5%+ unmute
+  	amixer -D pulse sset Master 5%+ unmute
 
 # Still multimedia
 XF86AudioLowerVolume
-  amixer -D pulse sset Master 5%- unmute
+  	amixer -D pulse sset Master 5%- unmute
 
 # still
 XF86AudioMute
-  amixer -D pulse sset Master toggle-mute
+  	amixer -D pulse sset Master toggle-mute
   
 # Screenshot
 Print
-  scrot ~/$(xdg-user-dir PICTURES)/Screenshot-$(date +%F_%T).png
+  	scrot ~/$(xdg-user-dir PICTURES)/Screenshot-$(date +%F_%T).png
 
 super + Print
-  ~/.config/bspwm/scripts/screenshot.sh
+  	~/.config/bspwm/scripts/screenshot.sh
 
 super + ctrl + 1
-  ~/.config/bspwm/scripts/keybindings_rofi.sh
+  	~/.config/bspwm/scripts/keybindings_rofi.sh
