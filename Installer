@@ -1,3 +1,7 @@
+welcome() { \
+    whiptail --title "Installing DTOS!" --msgbox "This is a script that will install what I sarcastically call DTOS (DT's operating system).  It's really just an installation script for those that want to try out my tiling window manager configurations and associated programs.  You will be asked to enter your sudo password at various points during this installation, so stay near the computer.\\n\\n-DT (Derek Taylor, aka DistroTube)" 16 60
+}
+
 max() {
     echo -e "$1\n$2" | sort -n | tail -1
 }
