@@ -80,9 +80,17 @@ installbspwm() { \
     whiptail --title "Window Managers - Bspwm" --yesno "Would you like to install Bspwm?" 8 60
 }
 
+installdwm() { \
+    whiptail --title "Window Managers - Dwm" --yesno "Would you like to install Dwm?" 8 60
+}
+
 choosewm || error "User chose to exit"
 
 installbspwm && sudo pacman -Sy bspwm sxhkd  || echo "User chose not to install Bspwm."
+
+installdwm && sudo pacman -Sy dtos-dwm dtos-dwmblocks && \
+    cp /etc/dtos/.config/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop || echo "User chose not to install Dwm"
+
 
 max() {
     echo -e "$1\n$2" | sort -n | tail -1
@@ -152,13 +160,13 @@ exitorinstall() {
     fi
 }
 
-browsers () {
+applications () {
     title="Web Browsers"
     text="Select one or more web browsers to install.\nAll programs marked with '*' are already installed.\nUnselecting them will NOT uninstall them."
     spacer=$(for i in $(seq 1 38); do echo -n " "; done)
 
     local -A checkboxes
-    checkboxes["brave-bin"]="brave"
+    checkboxes["firefox-developer-edition"]="firefox-developer-edition"
     checkboxes["chromium"]="chromium"
     checkboxes["firefox"]="firefox"
     checkboxes["google-chrome"]="google-chrome-stable"
@@ -173,93 +181,8 @@ browsers () {
     programchoices && selectedprograms && exitorinstall
 }
 
-otherinternet () {
-    title="Other Internet Programs"
-    text="Other Internet programs available for installation.\nAll programs marked with '*' are already installed.\nUnselecting them will NOT uninstall them."
-    spacer=$(for i in $(seq 1 47); do echo -n " "; done)
+applications
 
-    local -A checkboxes
-    checkboxes["deluge"]="deluge"
-    checkboxes["discord"]="discord"
-    checkboxes["element-desktop"]="element-desktop"
-    checkboxes["filezilla"]="filezilla"
-    checkboxes["geary"]="geary"
-    checkboxes["hexchat"]="hexchat"
-    checkboxes["jitsi-meet-bin"]="jitsi-meet-desktop"
-    checkboxes["mailspring"""]="mailspring"
-    checkboxes["telegram-desktop"]="telegram"
-    checkboxes["thunderbird"]="thunderbird"
-    checkboxes["transmission-gtk"]="transmission-gtk"
-
-    programchoices && selectedprograms && exitorinstall
-}
-
-multimedia() {
-    title="Multimedia Programs"
-    text="Multimedia programs available for installation.\nAll programs marked with '*' are already installed.\nUnselecting them will NOT uninstall them."
-    spacer=$(for i in $(seq 1 53); do echo -n " "; done)
-
-    local -A checkboxes
-    checkboxes["blender"]="blender"
-    checkboxes["deadbeef"]="deadbeef"
-    checkboxes["gimp"]="gimp"
-    checkboxes["inkscape"]="inkscape"
-    checkboxes["kdenlive"]="kdenlive"
-    checkboxes["krita"]="krita"
-    checkboxes["mpv"]="mpv"
-    checkboxes["obs-studio"]="obs"
-    checkboxes["rhythmbox"]="rhythmbox"
-    checkboxes["ristretto"]="ristretto"
-    checkboxes["vlc"]="vlc"
-
-    programchoices && selectedprograms && exitorinstall
-}
-
-office() {
-    title="Office Programs"
-    text="Office and productivity programs available for installation.\nAll programs marked with '*' are already installed.\nUnselecting them will NOT uninstall them."
-    spacer=$(for i in $(seq 1 46); do echo -n " "; done)
-
-    local -A checkboxes
-    checkboxes["abiword"]="abiword"
-    checkboxes["evince"]="evince"
-    checkboxes["gnucash"]="gnucash"
-    checkboxes["gnumeric"]="gnumeric"
-    checkboxes["libreoffice-fresh"]="lowriter"
-    checkboxes["libreoffice-still"]="lowriter"
-    checkboxes["scribus"]="scribus"
-    checkboxes["zathura"]="zathura"
-
-    programchoices && selectedprograms && exitorinstall
-}
-
-games () {
-    title="Games"
-    text="Gaming programs available for installation.\nAll programs marked with '*' are already installed.\nUnselecting them will NOT uninstall them."
-    spacer=$(for i in $(seq 1 51); do echo -n " "; done)
-
-    local -A checkboxes
-    checkboxes["0ad"]="0ad"
-    checkboxes["gnuchess"]="gnuchess"
-    checkboxes["lutris"]="lutris"
-    checkboxes["neverball"]="neverball"
-    checkboxes["openarena"]="openarena"
-    checkboxes["steam"]="steam"
-    checkboxes["supertuxkart"]="supertuxkart"
-    checkboxes["sauerbraten"]="sauerbraten-client"
-    checkboxes["teeworlds"]="teeworlds"
-    checkboxes["veloren-bin"]="veloren"
-    checkboxes["wesnoth"]="wesnoth"
-    checkboxes["xonotic"]="xonotic-glx"
-
-    programchoices && selectedprograms && exitorinstall
-}
-
-browsers
-otherinternet
-multimedia
-office
-games
 
 # Let's install each package listed in the pkglist.txt file.
 sudo pacman --needed --ask 4 -Sy - < pkglist.txt || error "Failed to install a required package from pkglist.txt."
@@ -276,69 +199,10 @@ cd /etc/dtos && cp -Rf . ~ && cd -
 # Change all scripts in .local/bin to be executable.
 find $HOME/.local/bin -type f -print0 | xargs -0 chmod 775
 
-if [ -d "/etc/dtos/.config/xmonad/" ]; then
-    PS3='What bar would you like to use with XMonad? (enter number): '
-    bars=("polybar" "xmobar" "both")
-    select choice in "${bars[@]}"; do
-        case $choice in
-             polybar)
-                sudo pacman -S dtos-polybar polybar
-                cp /etc/dtos/.config/xmonad/xmonad-example-configs/xmonad-with-polybar.hs $HOME/.config/xmonad/xmonad.hs
-                break
-                ;;
-             xmobar)
-                sudo pacman -S dtos-xmobar xmobar
-                cp /etc/dtos/.config/xmonad/xmonad-example-configs/xmonad-with-xmobar.hs $HOME/.config/xmonad/xmonad.hs
-                break
-                ;;
-             both)
-                sudo pacman -S dtos-polybar dtos-xmobar polybar xmobar
-                cp /etc/dtos/.config/xmonad/xmonad-example-configs/xmonad-with-polybar.hs $HOME/.config/xmonad/xmonad.hs
-                break
-                ;;
-             *)
-                echo "Invalid option $REPLY. You must choose a valid option."
-                ;;
-        esac
-    done
-fi
-
 echo "#########################################################"
 echo "## Installing Doom Emacs. This may take a few minutes. ##"
 echo "#########################################################"
-[ -d ~/.emacs.d ] && mv ~/.emacs.d ~/.emacs.d.bak.$(date +"%Y%m%d_%H%M%S")
-[ -f ~/.emacs ] && mv ~/.emacs ~/.emacs.bak.$(date +"%Y%m%d_%H%M%S")
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom --force install
-~/.emacs.d/bin/doom sync
 
-[ ! -d /etc/pacman.d/hooks ] && sudo mkdir /etc/pacman.d/hooks
-sudo cp /etc/dtos/.config/xmonad/pacman-hooks/recompile-xmonad.hook /etc/pacman.d/hooks/
-sudo cp /etc/dtos/.config/xmonad/pacman-hooks/recompile-xmonadh.hook /etc/pacman.d/hooks/
-
-[ ! -d $HOME/.config/dmscripts ] && mkdir $HOME/.config/dmscripts
-cp /etc/dmscripts/config $HOME/.config/dmscripts/config
-sed -i 's/DMBROWSER=\"brave\"/DMBROWSER=\"qutebrowser\"/g' $HOME/.config/dmscripts/config
-sed -i 's/DMTERM=\"st -e\"/DMTERM=\"alacritty -e\"/g' $HOME/.config/dmscripts/config
-sed -i 's/setbg_dir=\"${HOME}\/Pictures\/Wallpapers\"/setbg_dir=\"\/usr\/share\/backgrounds\/dtos-backgrounds\"/g' $HOME/.config/dmscripts/config
-
-xmonad_recompile() { \
-    echo "########################"
-    echo "## Recompiling XMonad ##"
-    echo "########################"
-    xmonad --recompile
-}
-
-xmonad_recompile || echo "Recompiling Xmonad failed!"
-
-xmonadctl_compile() { \
-    echo "####################################"
-    echo "## Compiling the xmonadctl script ##"
-    echo "####################################"
-    ghc -dynamic "$HOME"/.config/xmonad/xmonadctl.hs
-}
-
-xmonadctl_compile || echo "Compiling the xmonadctl script failed!"
 
 PS3='Set default user shell (enter number): '
 shells=("fish" "zsh" "quit")
