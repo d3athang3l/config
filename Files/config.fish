@@ -36,6 +36,7 @@ alias uhr='tty-clock -s -c -B -C'
 
 # set --universal pure_symbol_prompt '$'
 # set --universal pure_symbol_prompt '❯'
+# set --universal pure_symbol_prompt ''
 # set --universal pure_symbol_prompt '->'
 # set --universal pure_symbol_prompt '==>'
 
