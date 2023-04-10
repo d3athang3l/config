@@ -73,15 +73,15 @@ sudo locale-gen
 
 
 choosewm() { \
-    whiptail --title "CHOOSE YOUR WINDOW MANAGER(S)" --msgbox "Choose at least one window manager to install. The choices are: Xmonad, Awesome, Bspwm, Dwm and Qtile. If unsure, Xmonad is the recommended choice, or install all three options and try out each of them." 16 60
+    whiptail --title "CHOOSE YOUR WINDOW MANAGER(S)" --msgbox "Choose at least one window manager to install. The choices are: BSPWM and Hyprland. If unsure, BSPWM is the recommended choice, or install both options and try out each of them." 16 60
 }
 
 installbspwm() { \
     whiptail --title "Window Managers - Bspwm" --yesno "Would you like to install Bspwm?" 8 60
 }
 
-installdwm() { \
-    whiptail --title "Window Managers - Dwm" --yesno "Would you like to install Dwm?" 8 60
+installhyprland() { \
+    whiptail --title "Window Managers - Hyprland" --yesno "Would you like to install Hyprland?" 8 60
 }
 
 choosewm || error "User chose to exit"
@@ -166,17 +166,18 @@ applications () {
     spacer=$(for i in $(seq 1 38); do echo -n " "; done)
 
     local -A checkboxes
+    checkboxes["alacritty"]="alacritty"
+    checkboxes["kitty"]="kitty"
     checkboxes["firefox-developer-edition"]="firefox-developer-edition"
-    checkboxes["chromium"]="chromium"
-    checkboxes["firefox"]="firefox"
-    checkboxes["google-chrome"]="google-chrome-stable"
-    checkboxes["icecat-bin"]="icecat"
-    checkboxes["librewolf-bin"]="librewolf"
-    checkboxes["microsoft-edge-stable-bin"]="microsoft-edge-stable"
-    checkboxes["opera"]="opera"
-    checkboxes["qutebrowser"]="qutebrowser"
-    checkboxes["ungoogled-chromium-bin"]="ungoogled-chromium"
-    checkboxes["vivaldi"]="vivaldi"
+    checkboxes["neovim"]="neovim"
+    checkboxes["visual-studio-code-bin"]="vscode"
+    checkboxes["python-spotdl"]="spotdl"
+    checkboxes["btop"]="btop"
+    checkboxes["gimp"]="gimp"
+    checkboxes["vlc"]="vlc"
+    checkboxes["exa"]="exa"
+    checkboxes["rhythmbox"]="rhythmbox"
+    checkboxes["audacity"]="audacity"
 
     programchoices && selectedprograms && exitorinstall
 }
