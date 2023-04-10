@@ -71,26 +71,27 @@ lastchance || error "User choose to exit."
 grep "LC_CTYPE" /etc/locale.conf && echo "Checking the LC_CYPE variable in /etc/locale.conf. Variable is already set." || grep "LANG=" /etc/locale.conf | sed 's/LANG=/LC_CTYPE=/g' | sudo tee -a /etc/locale.conf
 sudo locale-gen
 
+echo "##################################################################"
+echo "##                Cloning the GitHub Repositorys                ##"
+echo "##################################################################"
+mkdir ~/GitHub
+cd ~/GitHub
+git clone https://github.com/Pfeffimann18/bspwm
+git clone https://github.com/Pfeffimann18/config
+git clone https://github.com/Pfeffimann18/catppuccin
+git clone https://github.com/Pfeffimann18/Hyprland
+git clone https://github.com/Pfeffimann18/KDE-Plasma
+git clone https://github.com/Pfeffimann18/ZSH
+cd ~
 
 choosewm() { \
-    whiptail --title "CHOOSE YOUR WINDOW MANAGER(S)" --msgbox "Choose at least one window manager to install. The choices are: BSPWM and Hyprland. If unsure, BSPWM is the recommended choice, or install both options and try out each of them." 16 60
+    whiptail --title "CHOOSE YOUR WINDOW MANAGER(S)" --msgbox "Choose at least one window manager to install. The choices are: Xmonad, Awesome, Bspwm, Dwm and Qtile. If unsure, Xmonad is the recommended choice, or install all three options and try out each of them." 16 60
 }
 
 installbspwm() { \
     whiptail --title "Window Managers - Bspwm" --yesno "Would you like to install Bspwm?" 8 60
 }
-
-installhyprland() { \
-    whiptail --title "Window Managers - Hyprland" --yesno "Would you like to install Hyprland?" 8 60
-}
-
-choosewm || error "User chose to exit"
-
-installbspwm && sudo pacman -Sy bspwm sxhkd  || echo "User chose not to install Bspwm."
-
-installdwm && sudo pacman -Sy dtos-dwm dtos-dwmblocks && \
-    cp /etc/dtos/.config/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop || echo "User chose not to install Dwm"
-
+installbspwm && sudo pacman -Sy bspwm sxhkd || echo "User chose not to install Bspwm."
 
 max() {
     echo -e "$1\n$2" | sort -n | tail -1
@@ -168,14 +169,11 @@ applications () {
     local -A checkboxes
     checkboxes["alacritty"]="alacritty"
     checkboxes["kitty"]="kitty"
+    checkboxes["sublime-text-4"]="sublime text"
     checkboxes["firefox-developer-edition"]="firefox-developer-edition"
     checkboxes["neovim"]="neovim"
-    checkboxes["visual-studio-code-bin"]="vscode"
-    checkboxes["python-spotdl"]="spotdl"
-    checkboxes["btop"]="btop"
-    checkboxes["gimp"]="gimp"
     checkboxes["vlc"]="vlc"
-    checkboxes["exa"]="exa"
+    checkboxes["gimp"]="gimp"
     checkboxes["rhythmbox"]="rhythmbox"
     checkboxes["audacity"]="audacity"
 
@@ -184,32 +182,36 @@ applications () {
 
 applications
 
-
 # Let's install each package listed in the pkglist.txt file.
 sudo pacman --needed --ask 4 -Sy - < pkglist.txt || error "Failed to install a required package from pkglist.txt."
 
 echo "################################################################"
-echo "## Copying DTOS configuration files from /etc/dtos into \$HOME ##"
+echo "##   Copying configuration files from /etc/dtos into \$HOME   ##"
 echo "################################################################"
-[ ! -d /etc/dtos ] && sudo mkdir /etc/dtos
-[ -d /etc/dtos ] && mkdir ~/dtos-backup-$(date +%Y.%m.%d-%H%M) && cp -Rf /etc/dtos ~/dtos-backup-$(date +%Y.%m.%d-%H%M)
-[ ! -d ~/.config ] && mkdir ~/.config
-[ -d ~/.config ] && mkdir ~/.config-backup-$(date +%Y.%m.%d-%H%M) && cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H%M)
-cd /etc/dtos && cp -Rf . ~ && cd -
+rm ~/.config/bspwm/*
+ln -s ~/GitHub/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 
-# Change all scripts in .local/bin to be executable.
-find $HOME/.local/bin -type f -print0 | xargs -0 chmod 775
+rm ~/.config/sxhkd/*
+ln -s ~/GitHub/bspwm/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
-echo "#########################################################"
-echo "## Installing Doom Emacs. This may take a few minutes. ##"
-echo "#########################################################"
+rm -r ~/.config/polybar
+ln -s ~/GitHub/bspwm/polybar ~/.config/
 
+rm ~/.config/fish/config.fish
+ln -s ~/GitHub/config/Files/config.fish ~/.config/fish/config.fish
+
+ln -s ~/GitHub/bspwm/scripts/dmenu/ ~/.config/scripts/
+ln -s ~/GitHub/bspwm/kitty-bspwm ~/.config/kitty/kitty.conf
+ln -s ~/GitHub/bspwm/picom.conf ~/.config/
+ln -s ~/GitHub/bspwm/conky.conf ~/.config/
+ln -s ~/GitHub/config/nvim ~/.config
+ln -s ~/GitHub/config/fonts ~/.local/share
 
 PS3='Set default user shell (enter number): '
 shells=("fish" "zsh" "quit")
 select choice in "${shells[@]}"; do
     case $choice in
-         fish | zsh)
+         fish | bash | zsh)
             sudo chsh $USER -s "/bin/$choice" && \
             echo -e "$choice has been set as your default USER shell. \
                     \nLogging out is required for this take effect."
@@ -253,6 +255,17 @@ echo "###################################"
 [ -f "/etc/sddm.conf.d/kde_settings.conf" ] && \
     sudo cp /etc/sddm.conf.d/kde_settings.conf /etc/sddm.conf.d/kde_settings.backup && \
     sudo sed -i 's/^Current=*.*/Current=multicolor-sddm-theme/g' /etc/sddm.conf.d/kde_settings.conf
+
+echo "################################################################"
+echo "##              Install Icon, GTK and Mous-Themes             ##"
+echo "################################################################"
+mkdir Themes && cd Themes
+git clone https://github.com/vinceliuice/McMojave-circle && cd McMojave-circle
+./install.sh --grey
+cd ..
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme && cd WhiteSur-icon-theme
+./install.sh -t grey
+cd ~
 
 echo "##############################"
 echo "## DTOS has been installed! ##"
