@@ -206,6 +206,7 @@ ln -s ~/GitHub/bspwm/picom.conf ~/.config/
 ln -s ~/GitHub/bspwm/conky.conf ~/.config/
 ln -s ~/GitHub/config/nvim ~/.config
 ln -s ~/GitHub/config/fonts ~/.local/share
+ln -s ~/GitHub/config/Files/Preferences.sublime-settings ~/.config/sublime-text/Packages/User
 
 PS3='Set default user shell (enter number): '
 shells=("fish" "zsh" "quit")

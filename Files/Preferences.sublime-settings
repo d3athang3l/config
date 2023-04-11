@@ -1,0 +1,10 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"dictionary": "Packages/Language - German/de_DE.dic",
+	"font_face": "JetBrainsMono Nerd Font",
+	"font_size": 10,
+	"spell_check": true,
+	"hide_pointer_while_typing": false,
+	"color_scheme": "Catppuccin Frappe.sublime-color-scheme",
+}
