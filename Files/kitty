@@ -109,8 +109,8 @@ background_opacity 1
 
 kitty_mod ctrl+shift
 map kitty_mod+c copy_to_clipboard
-map cmd+c       copy_to_clipboard
-map cmd+v       paste_from_clipboard
+map ctrl+c       copy_to_clipboard
+map ctrl+v       paste_from_clipboard
 map page_up scroll_page_up
 map page_down scroll_page_down
 map home scroll_home

@@ -129,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/leon/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/home/leon/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
-    url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/leon/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -233,16 +228,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/leon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vim-bbye"] = {
-    loaded = true,
-    path = "/home/leon/.local/share/nvim/site/pack/packer/start/vim-bbye",
-    url = "https://github.com/moll/vim-bbye"
-  },
-  ["vim-illuminate"] = {
-    loaded = true,
-    path = "/home/leon/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["which-key.nvim"] = {
     loaded = true,

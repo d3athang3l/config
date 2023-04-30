@@ -44,5 +44,6 @@ alias uhr='tty-clock -s -c -B -C'
 # set --universal pure_color_success red # Prompt Char
 
 # THEME PURE #
-set fish_function_path /home/leon/.config/fish/functions/theme-pure/functions/ $fish_function_path
-source /home/leon/.config/fish/functions/theme-pure/conf.d/pure.fish
+#set fish_function_path /home/leon/.config/fish/functions/theme-pure/functions/ $fish_function_path
+#source /home/leon/.config/fish/functions/theme-pure/conf.d/pure.fish
+starship init fish | source
