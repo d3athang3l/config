@@ -1,5 +1,5 @@
 mkdir GitHub
 cd GitHub
-git clone https://github.com/Pfeffimann18/config
-git clone https://github.com/Pfeffimann18/catppuccin
-git clone https://github.com/Pfeffimann18/ZSH
+git clone https://github.com/d3athang3l/config
+git clone https://github.com/d3athang3l/catppuccin
+git clone https://github.com/d3athang3l/ZSH
