@@ -1,10 +1,9 @@
 palette = "catppuccin_frappe"
-
 add_newline = false 
 
 [character]
 # Note the use of Catppuccin color 'maroon'
-success_symbol = "[==>](green)"
+success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
 vicmd_symbol = "[❮](green)"
 # other symbols "❯",">","->","==>"
@@ -13,6 +12,13 @@ vicmd_symbol = "[❮](green)"
 truncation_length = 4
 # Catppuccin 'lavender'
 style = "bold teal"
+
+[line_break]
+disabled = true
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
 
 [palettes.catppuccin_frappe]
 rosewater = "#f2d5cf"
@@ -41,10 +47,3 @@ surface0 = "#414559"
 base = "#303446"
 mantle = "#292c3c"
 crust = "#232634"
-
-[line_break]
-disabled = true
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true

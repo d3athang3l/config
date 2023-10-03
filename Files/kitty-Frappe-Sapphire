@@ -1,5 +1,7 @@
 #: Font
-font_family      FantasqueSansMono Nerd Font
+font_family       FantasqueSansMono Nerd Font
+# font_family       JetBrainsMono Nerd Font
+# font_family       VictorMono Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
@@ -29,29 +31,24 @@ tab_bar_style               powerline
 tab_powerline_style         slanted
 tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}"
 
-
-
-background_opacity 1
-
 #: Keybindings
 
 kitty_mod ctrl+shift
 map kitty_mod+c 	copy_to_clipboard
-map ctrl+c 			copy_to_clipboard
 map ctrl+v 			paste_from_clipboard
 map page_up 		scroll_page_up
 map page_down 		scroll_page_down
-map home scroll_home
-map end scroll_end
-map cmd+g show_last_command_output
+map home            scroll_home
+map end             scroll_end
+map cmd+g           show_last_command_output
 map shift+cmd+enter close_window
 map cmd+enter       new_window
 map ctrl+tab        next_tab
-map ctrl+shift+tab previous_tab
-map kitty_mod+t new_tab
-map kitty_mod+q close_tab
+map ctrl+shift+tab  previous_tab
+map kitty_mod+t     new_tab
+map kitty_mod+q     close_tab
 map shift+cmd+i     set_tab_title
-map kitty_mod+l next_layout
+map kitty_mod+l     next_layout
 map kitty_mod+plus   change_font_size all +2.0
 map kitty_mod+minus       change_font_size all -2.0
 map kitty_mod+backspace change_font_size all 0
@@ -138,3 +135,5 @@ color14 #81C8BE
 # white
 color7  #B5BFE2
 color15 #A5ADCE
+
+background_opacity 1
