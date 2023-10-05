@@ -14,12 +14,21 @@ choose_packages() {
     "dolphin" "" OFF \
     "dunst"   "" OFF \
     "ulauncher" "" OFF \
+    "gedit" "" OFF \
     "sublime-text-4" "" OFF \
     "visual-studio-code-bin" "" OFF \
     "ncdu" "" OFF \
     "bpytop" "" OFF \
+    "kitty" "" OFF \
     "fish" "" OFF \
     "starship" "" OFF \
+    "vlc" "" OFF \
+    "audacity" "" OFF \
+    "cava" "" OFF \
+    "discord" "" OFF \
+    "conky" "" OFF \
+    "polybar" "" OFF \
+    "plank" "" OFF \
     "ark" "" OFF 3>&1 1>&2 2>&3)
 }
 
