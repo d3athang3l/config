@@ -1,0 +1,64 @@
+#+title: Fish Shell Configuration
+#+PROPERTY: header-args :tangle config.fish
+
+#+BEGIN_SRC bash
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+#+END_SRC
+
+#+BEGIN_SRC bash
+pfetch
+set fish_greeting
+#+END_SRC
+
+#+BEGIN_SRC bash
+export SUDO_EDITOR="nvim"
+#+END_SRC
+
+* Aliases
+Default Aliases for the Fish Shell.
+#+BEGIN_SRC bash
+abbr -a s 'sudo'
+abbr -a n 'nvim'
+
+
+abbr -a ps 'paru -S'
+abbr -a pr 'paru -R'
+abbr -a psy 'paru -Sy'
+abbr -a psyu 'paru -Syu'
+
+abbr -a sc 'sudo systemctl'
+abbr -a se 'sudo -e'
+abbr -a uhr 'tty-clock -s -c -B -C'
+abbr -a gc 'git clone'
+abbr -a gc.c 'git clone https://github.com/catppuccin/'
+abbr -a gc.p 'git clone https://github.com/Pfeffimann18/'
+
+abbr -a ZSH '~/.zshrc'
+abbr -a szsh 'source ~/.zshrc'
+abbr -a FISH '~/.config/fish/config.fish'
+abbr -a sfish 'source ~/.config/fish/config.fish'
+
+abbr -a sxrestart 'pkill -USR1 -x sxhkd'
+abbr -a  setlocales 'sudo localectl set-x11-keymap de-latin1-nodeadkeys && sudo localectl set-locale LANG=de_DE.UTF-8'
+
+alias ls='exa --icons --color=always -l'
+alias uhr='tty-clock -s -c -B -C'
+#+END_SRC
+
+#+BEGIN_SRC bash
+# set --universal pure_symbol_prompt '$'
+# set --universal pure_symbol_prompt '❯'
+# set --universal pure_symbol_prompt ''
+# set --universal pure_symbol_prompt '->'
+# set --universal pure_symbol_prompt '==>'
+
+# set --universal pure_color_primary red # Path
+# set --universal pure_color_success red # Prompt Char
+
+# THEME PURE #
+#set fish_function_path /home/leon/.config/fish/functions/theme-pure/functions/ $fish_function_path
+#source /home/leon/.config/fish/functions/theme-pure/conf.d/pure.fish
+starship init fish | source
+#+END_SRC
