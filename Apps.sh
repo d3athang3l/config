@@ -1,6 +1,6 @@
 #!/bin/bash
-git config --global user.email "leon_gross@icloud.com"
-git config --global user.name "d3athang3l"
+git config --global user.email "..."
+git config --global user.name "..."
 # Prüfen, ob Whiptail installiert ist
 if ! command -v whiptail &> /dev/null; then
   echo "Whiptail ist nicht installiert. Bitte installieren Sie es zuerst."
